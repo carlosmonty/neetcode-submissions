@@ -1,0 +1,35 @@
+class Solution {
+    /**
+     * @param {number[]} nums
+     * @param {number} target
+     * @return {number}
+     */
+    search(nums, target) {
+        
+        let l = 0;
+        let r = nums.length-1;
+     
+     
+     
+            while(l<=r){
+            let mid = l + Math.floor((r-l)/2);
+                if(target<nums[mid]){
+                    //check left 
+                    r = mid-1
+                }
+                else if (target>nums[mid]){
+                    // check right
+                    l = mid+1
+                }
+                else{
+                    return mid
+                }
+
+
+            }
+            return -1
+        
+       
+        
+    }
+}
